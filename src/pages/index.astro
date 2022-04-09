@@ -1,203 +1,188 @@
 ---
 import Logotype from "../components/Logotype.astro";
-
-const title = "Firemyna";
+import BaseLayout from "../layouts/Base.astro";
 ---
 
-<html lang="en" class="h-full bg-gray-900 text-white">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
+<BaseLayout title="Firemyna">
+  <div class="relative overflow-hidden">
+    <div class="relative pt-16 pb-16 sm:pb-24">
+      <main class="flex flex-col items-center space-y-12">
+        <Logotype size="large" />
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <script
-      src="https://kit.fontawesome.com/ec93d48873.js"
-      crossorigin="anonymous"></script>
-  </head>
+        <div class="flex flex-col items-center space-y-8 text-center">
+          <h1
+            class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl"
+          >
+            <span class="block">The best way to</span>
+            <span class="block text-orange-500">start, develop and ship</span>
+            <span class="block">Firebase apps</span>
+          </h1>
 
-  <body class="h-full">
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <div class="relative overflow-hidden">
-      <div class="relative pt-16 pb-16 sm:pb-24">
-        <main class="flex flex-col items-center space-y-12">
-          <Logotype size="large" />
+          <p
+            class="max-w-md mx-auto text-base text-slate-300 sm:text-lg md:text-xl md:max-w-3xl"
+          >
+            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+            fugiat aliqua.
+          </p>
 
-          <div class="flex flex-col items-center space-y-8 text-center">
-            <h1
-              class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl"
-            >
-              <span class="block">The best way to</span>
-              <span class="block text-orange-500">start, develop and ship</span>
-              <span class="block">Firebase apps</span>
-            </h1>
+          <div class="max-w-md mx-auto flex justify-center space-x-5">
+            <div class="rounded-md shadow">
+              <a
+                href="#"
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 md:py-4 md:text-lg md:px-10"
+              >
+                Get Started
+              </a>
+            </div>
 
-            <p
-              class="max-w-md mx-auto text-base text-slate-300 sm:text-lg md:text-xl md:max-w-3xl"
-            >
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-
-            <div class="max-w-md mx-auto flex justify-center space-x-5">
-              <div class="rounded-md shadow">
-                <a
-                  href="#"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 md:py-4 md:text-lg md:px-10"
-                >
-                  Get Started
-                </a>
-              </div>
-
-              <div class="rounded-md shadow">
-                <a
-                  href="/docs"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-slate-300 border-slate-300 hover:border-slate-200 hover:bg-slate-200 hover:text-slate-900 md:py-4 md:text-lg md:px-10"
-                >
-                  Documentation
-                </a>
-              </div>
+            <div class="rounded-md shadow">
+              <a
+                href="/docs"
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-slate-300 border-slate-300 hover:border-slate-200 hover:bg-slate-200 hover:text-slate-900 md:py-4 md:text-lg md:px-10"
+              >
+                Documentation
+              </a>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <div class="py-12 bg-gray-800">
-      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="sr-only">A better way to send money.</h2>
-        <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
-          <div class="flex flex-col space-y-3">
-            <dt class="flex flex-col space-y-3">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
-              >
-                <i class="fa-duotone fa-rocket-launch inline h-5"></i>
-              </div>
+  <div class="py-12 bg-gray-800">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="sr-only">A better way to send money.</h2>
+      <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+        <div class="flex flex-col space-y-3">
+          <dt class="flex flex-col space-y-3">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
+            >
+              <i class="fa-duotone fa-rocket-launch inline h-5"></i>
+            </div>
 
-              <p class="text-xl leading-6 font-medium">Start</p>
-            </dt>
+            <p class="text-xl leading-6 font-medium">Start</p>
+          </dt>
 
-            <dd class="flex flex-col items-start space-y-4">
-              <div
-                class="flex flex-col items-start space-y-2 text-lg text-slate-300"
-              >
-                <p>
-                  Get up and running a Firebase app integrated with your
-                  favorite framework and build tool in under two minutes.
-                </p>
+          <dd class="flex flex-col items-start space-y-4">
+            <div
+              class="flex flex-col items-start space-y-2 text-lg text-slate-300"
+            >
+              <p>
+                Get up and running a Firebase app integrated with your favorite
+                framework and build tool in under two minutes.
+              </p>
 
-                <p>
-                  Plays nicely with <a
-                    href="#"
-                    class="whitespace-nowrap  text-orange-100"
-                    ><img src="/assets/logos/astro.svg" class="h-5 inline" /> Astro</a
-                  >, <a href="#" class="whitespace-nowrap text-orange-100"
-                    ><img src="/assets/logos/next.svg" class="h-4 inline" />
-                    Next.js</a
-                  >, <a href="#" class="whitespace-nowrap text-orange-100"
-                    ><img src="/assets/logos/remix.svg" class="h-4 inline" /> Remix</a
-                  >, <a href="#" class="whitespace-nowrap text-orange-100"
-                    ><img src="/assets/logos/vite.svg" class="h-5 inline" />
-                    Vite</a
-                  >, <a href="#" class="whitespace-nowrap text-orange-100"
-                    ><img src="/assets/logos/cra.svg" class="h-5 inline" /> Create
-                    React App</a
-                  >, and <a href="#" class="text-orange-100">more</a>.
-                </p>
-              </div>
+              <p>
+                Plays nicely with <a
+                  href="#"
+                  class="whitespace-nowrap  text-orange-100"
+                  ><img src="/assets/logos/astro.svg" class="h-5 inline" /> Astro</a
+                >, <a href="#" class="whitespace-nowrap text-orange-100"
+                  ><img src="/assets/logos/next.svg" class="h-4 inline" />
+                  Next.js</a
+                >, <a href="#" class="whitespace-nowrap text-orange-100"
+                  ><img src="/assets/logos/remix.svg" class="h-4 inline" /> Remix</a
+                >, <a href="#" class="whitespace-nowrap text-orange-100"
+                  ><img src="/assets/logos/vite.svg" class="h-5 inline" />
+                  Vite</a
+                >, <a href="#" class="whitespace-nowrap text-orange-100"
+                  ><img src="/assets/logos/cra.svg" class="h-5 inline" /> Create
+                  React App</a
+                >, and <a href="#" class="text-orange-100">more</a>.
+              </p>
+            </div>
 
-              <a
-                href="#"
-                class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
-              >
-                Install Firemyna <i class="fa-light fa-angle-right h-4 inline"
-                ></i>
-              </a>
-            </dd>
-          </div>
+            <a
+              href="#"
+              class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
+            >
+              Install Firemyna <i class="fa-light fa-angle-right h-4 inline"
+              ></i>
+            </a>
+          </dd>
+        </div>
 
-          <div class="flex flex-col space-y-3">
-            <dt class="flex flex-col space-y-3">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
-              >
-                <i class="fa-duotone fa-code inline h-5"></i>
-              </div>
+        <div class="flex flex-col space-y-3">
+          <dt class="flex flex-col space-y-3">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
+            >
+              <i class="fa-duotone fa-code inline h-5"></i>
+            </div>
 
-              <p class="text-xl leading-6 font-medium">Develop</p>
-            </dt>
+            <p class="text-xl leading-6 font-medium">Develop</p>
+          </dt>
 
-            <dd class="flex flex-col items-start space-y-4">
-              <div
-                class="flex flex-col items-start space-y-2 text-lg text-slate-300"
-              >
-                <p>
-                  Blazing-fast Firebase Functions builder based on <a
-                    href="#"
-                    class="text-orange-100">esbuild</a
-                  > compiles and livereloads code in mere milliseconds.
-                </p>
+          <dd class="flex flex-col items-start space-y-4">
+            <div
+              class="flex flex-col items-start space-y-2 text-lg text-slate-300"
+            >
+              <p>
+                Blazing-fast Firebase Functions builder based on <a
+                  href="#"
+                  class="text-orange-100">esbuild</a
+                > compiles and livereloads code in mere milliseconds.
+              </p>
 
-                <p>
-                  The set of generator scripts will help you quickly create a
-                  new function.
-                </p>
+              <p>
+                The set of generator scripts will help you quickly create a new
+                function.
+              </p>
 
-                <p>
-                  Deep integration with Firebase Emulator and Firebase CLI will
-                  maximize your productivity.
-                </p>
-              </div>
+              <p>
+                Deep integration with Firebase Emulator and Firebase CLI will
+                maximize your productivity.
+              </p>
+            </div>
 
-              <a
-                href="#"
-                class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
-              >
-                Development features <i
-                  class="fa-light fa-angle-right h-4 inline"></i>
-              </a>
-            </dd>
-          </div>
+            <a
+              href="#"
+              class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
+            >
+              Development features <i class="fa-light fa-angle-right h-4 inline"
+              ></i>
+            </a>
+          </dd>
+        </div>
 
-          <div class="flex flex-col space-y-3">
-            <dt class="flex flex-col space-y-3">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
-              >
-                <i class="fa-duotone fa-ship inline h-5"></i>
-              </div>
+        <div class="flex flex-col space-y-3">
+          <dt class="flex flex-col space-y-3">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-400 text-white"
+            >
+              <i class="fa-duotone fa-ship inline h-5"></i>
+            </div>
 
-              <p class="text-xl leading-6 font-medium">Ship</p>
-            </dt>
+            <p class="text-xl leading-6 font-medium">Ship</p>
+          </dt>
 
-            <dd class="flex flex-col items-start space-y-4">
-              <div
-                class="flex flex-col items-start space-y-2 text-lg text-slate-300"
-              >
-                <p>
-                  From the get-go, Firemyna setups ready-to-deploy SSR function.
-                </p>
+          <dd class="flex flex-col items-start space-y-4">
+            <div
+              class="flex flex-col items-start space-y-2 text-lg text-slate-300"
+            >
+              <p>
+                From the get-go, Firemyna setups ready-to-deploy SSR function.
+              </p>
 
-                <p>
-                  It optimizes the code and dependencies, so the deployment as
-                  fast as possible and the function has no memory overhead.
-                </p>
+              <p>
+                It optimizes the code and dependencies, so the deployment as
+                fast as possible and the function has no memory overhead.
+              </p>
 
-                <p>With the help of commands, ship only functions you need.</p>
-              </div>
+              <p>With the help of commands, ship only functions you need.</p>
+            </div>
 
-              <a
-                href="#"
-                class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
-              >
-                Ship your app <i class="fa-light fa-angle-right h-4 inline"></i>
-              </a>
-            </dd>
-          </div>
-        </dl>
-      </div>
+            <a
+              href="#"
+              class="bg-slate-700 text-slate-200 px-2 rounded-xl text-base  hover:bg-slate-500"
+            >
+              Ship your app <i class="fa-light fa-angle-right h-4 inline"></i>
+            </a>
+          </dd>
+        </div>
+      </dl>
     </div>
-  </body>
-</html>
+  </div>
+</BaseLayout>
