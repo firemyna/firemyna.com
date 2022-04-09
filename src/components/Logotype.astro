@@ -1,0 +1,18 @@
+---
+import classnames from "classnames";
+const { size = "medium" } = Astro.props;
+---
+
+<a
+  href="/"
+  class={classnames(
+    "flex space-x-3 items-center font-semibold text-orange-100",
+    size === "large" && "space-x-3 text-4xl",
+    size === "medium" && "space-x-2 text-xl"
+  )}
+  ><img
+    src="/assets/logo.svg"
+    class={classnames(size === "large" && "h-10", size === "medium" && "h-7")}
+  />
+  <span>Firemyna</span></a
+>

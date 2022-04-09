@@ -10,9 +10,11 @@
     "@astrojs/tailwind": "^0.0.2",
     "astro": "^0.25.4",
     "firebase-tools": "^10.5.0",
-    "firemyna": "^0.9.2"
+    "firemyna": "^0.9.2",
+    "prettier-plugin-astro": "^0.0.12"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.19.0"
   }
