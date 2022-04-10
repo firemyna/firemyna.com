@@ -21,7 +21,7 @@ Here are the key points that will help you understand how Firemyna can help you,
 
 ### Starting
 
-**Quickstart**. When starting, Firemyna will bootstrap the development environment and integrate it with the bundler or framework of your choice - [Astro], [Next.js], [Remix], [Vite], [Create React App], and [more](/docs/start#integrations).
+**Quickstart**. When starting, Firemyna will bootstrap the development environment and integrate it with the bundler or framework of your choice - [Astro], [Next.js], [Remix], [Vite], [Create React App], and [more](/docs/start).
 
 **Ready-to-deploy**. The environment Firemyna sets up for you is ready to deploy to Firebase from the get-go.
 
@@ -31,7 +31,7 @@ Here are the key points that will help you understand how Firemyna can help you,
 
 **Code sharing**. Firemyna enables code sharing between the web app and Firebase Functions by bundling the Functions source code with blazing-fast [esbuild].
 
-**Shared package.json**. Thanks to dependency optimization during the deployment (for more, [see below](#shipping), your web app and the Functions now share a single package.json that significantly simplifies the request.
+**Shared package.json**. Thanks to dependency optimization during the deployment (for more, [see below](#shipping), your web app and the Functions now share a single package.json that significantly simplifies the development.
 
 **Auto-index**. To create a new function, you need to create a file—no need to list it in the index file that is automatically generated.
 
