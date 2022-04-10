@@ -2,4 +2,6 @@
 layout: "../../../layouts/Docs.astro"
 ---
 
-# Getting started
+# Getting started with Firemyna
+
+## Integrations
