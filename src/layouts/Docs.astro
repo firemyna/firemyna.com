@@ -1,8 +1,10 @@
 ---
 import Logotype from "../components/Logotype.astro";
 import BaseLayout from "./Base.astro";
+import classnames from "classnames";
 
 const { title } = Astro.props;
+const path = new URL(Astro.request.url).pathname;
 ---
 
 <BaseLayout {title}>
@@ -14,7 +16,10 @@ const { title } = Astro.props;
         <div>
           <a
             href="/docs"
-            class="flex space-x-3 items-center p-2 bg-slate-900 text-slate-100 group w-full text-sm font-medium rounded-md"
+            class={classnames(
+              "flex space-x-3 items-center p-2 text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full text-sm font-medium rounded-md",
+              path === "/docs" && "bg-slate-900"
+            )}
           >
             <i class="fa-duotone fa-house h-5"></i>
             <span>Introduction</span>
@@ -24,9 +29,10 @@ const { title } = Astro.props;
         <div class="space-y-1">
           <a
             href="/docs/start"
-            class="flex space-x-3 items-center bg-slate-700 text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            aria-controls="sub-menu-1"
-            aria-expanded="false"
+            class={classnames(
+              "flex space-x-3 items-center text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500",
+              path === "/docs/start" ? "bg-slate-900" : "bg-slate-700"
+            )}
           >
             <i class="fa-duotone fa-rocket-launch h-5"></i>
             <span class="flex-1">Start</span>
@@ -35,49 +41,70 @@ const { title } = Astro.props;
           <div class="space-y-1" id="sub-menu-1">
             <a
               href="/docs/start/astro"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/astro" && "bg-slate-900"
+              )}
             >
               Astro
             </a>
 
             <a
               href="/docs/start/next"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/next" && "bg-slate-900"
+              )}
             >
               Next.js
             </a>
 
             <a
               href="/docs/start/remix"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/remix" && "bg-slate-900"
+              )}
             >
               Remix
             </a>
 
             <a
               href="/docs/start/vite"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/vite" && "bg-slate-900"
+              )}
             >
               Vite
             </a>
 
             <a
               href="/docs/start/cra"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/cra" && "bg-slate-900"
+              )}
             >
               Create React App
             </a>
 
             <a
               href="/docs/start/vanilla"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/vanilla" && "bg-slate-900"
+              )}
             >
               Vanilla
             </a>
 
             <a
               href="/docs/start/configuration"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/start/configuration" && "bg-slate-900"
+              )}
             >
               Configuration
             </a>
@@ -87,9 +114,10 @@ const { title } = Astro.props;
         <div class="space-y-1">
           <a
             href="/docs/develop"
-            class="flex space-x-3 items-center bg-slate-700 text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            aria-controls="sub-menu-1"
-            aria-expanded="false"
+            class={classnames(
+              "flex space-x-3 items-center text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500",
+              path === "/docs/develop" ? "bg-slate-900" : "bg-slate-700"
+            )}
           >
             <i class="fa-duotone fa-code h-5"></i>
             <span class="flex-1">Develop</span>
@@ -98,14 +126,20 @@ const { title } = Astro.props;
           <div class="space-y-1" id="sub-menu-1">
             <a
               href="/docs/develop/server"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/develop/server" && "bg-slate-900"
+              )}
             >
               Development server
             </a>
 
             <a
               href="/docs/develop/generators"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/develop/generators" && "bg-slate-900"
+              )}
             >
               Generators
             </a>
@@ -115,9 +149,10 @@ const { title } = Astro.props;
         <div class="space-y-1">
           <a
             href="/docs/ship"
-            class="flex space-x-3 items-center bg-slate-700 text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            aria-controls="sub-menu-1"
-            aria-expanded="false"
+            class={classnames(
+              "flex space-x-3 items-center text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500",
+              path === "/docs/ship" ? "bg-slate-900" : "bg-slate-700"
+            )}
           >
             <i class="fa-duotone fa-ship h-5"></i>
             <span class="flex-1">Ship</span>
@@ -126,7 +161,10 @@ const { title } = Astro.props;
           <div class="space-y-1" id="sub-menu-1">
             <a
               href="/docs/ship/deploying"
-              class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/ship/deploying" && "bg-slate-900"
+              )}
             >
               Deploying
             </a>
@@ -137,7 +175,7 @@ const { title } = Astro.props;
   </div>
 
   <main class="pl-64">
-    <div class="p-10 prose prose-invert prose-xl max-w-6xl">
+    <div class="p-10 prose prose-invert prose-xl max-w-4xl">
       <slot />
     </div>
   </main>
