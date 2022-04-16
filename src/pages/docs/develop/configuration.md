@@ -2,7 +2,7 @@
 layout: "../../../layouts/Docs.astro"
 ---
 
-# Firemyna configration
+# Firemyna configuration
 
 Firemyna reads project configuration from `firemyna.config.ts` or `firemyna.config.js` in the project directory, which might look something like that:
 

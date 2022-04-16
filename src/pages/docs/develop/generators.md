@@ -24,7 +24,3 @@ See the complete list of commands with its arguments:
 
 - [HTTP function](#http-function)
 - [Callable HTTP function](#callable-http-function)
-
-## HTTP function
-
-## Callable HTTP function

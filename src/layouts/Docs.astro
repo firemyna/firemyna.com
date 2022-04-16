@@ -9,7 +9,7 @@ const path = new URL(Astro.request.url).pathname;
 
 <BaseLayout {title}>
   <div class="w-64 flex-col fixed inset-y-0 bg-slate-800">
-    <div class="flex-1 space-y-4 pt-5 pb-5 overflow-y-auto">
+    <div class="flex-1 space-y-4 pt-5 pb-5 h-full overflow-y-auto">
       <div class="flex items-center flex-shrink-0 px-4"><Logotype /></div>
 
       <nav class="flex-1 px-2 space-y-2" aria-label="Sidebar">
@@ -160,6 +160,16 @@ const path = new URL(Astro.request.url).pathname;
 
           <div class="space-y-1" id="sub-menu-1">
             <a
+              href="/docs/ship/building"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/ship/building" && "bg-slate-900"
+              )}
+            >
+              Building
+            </a>
+
+            <a
               href="/docs/ship/deploying"
               class={classnames(
                 "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
@@ -167,6 +177,191 @@ const path = new URL(Astro.request.url).pathname;
               )}
             >
               Deploying
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <a
+            href="/docs/cli"
+            class={classnames(
+              "flex space-x-3 items-center text-slate-100 hover:text-orange-100 hover:bg-orange-900 group w-full p-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500",
+              path === "/docs/cli" ? "bg-slate-900" : "bg-slate-700"
+            )}
+          >
+            <i class="fa-duotone fa-terminal h-5"></i>
+            <span class="flex-1">CLI</span>
+          </a>
+
+          <div class="space-y-1" id="sub-menu-1">
+            <a
+              href="/docs/cli/init"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/init" && "bg-slate-900"
+              )}
+            >
+              <code>init</code>
+            </a>
+
+            <a
+              href="/docs/cli/dev"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/dev" && "bg-slate-900"
+              )}
+            >
+              <code>dev</code>
+            </a>
+
+            <a
+              href="/docs/cli/build"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/build" && "bg-slate-900"
+              )}
+            >
+              <code>build</code>
+            </a>
+
+            <a
+              href="/docs/cli/deploy"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/deploy" && "bg-slate-900"
+              )}
+            >
+              <code>deploy</code>
+            </a>
+
+            <a
+              href="/docs/cli/serve"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/serve" && "bg-slate-900"
+              )}
+            >
+              <code>serve</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:http"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:http" && "bg-slate-900"
+              )}
+            >
+              <code>generate:http</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:express"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:express" && "bg-slate-900"
+              )}
+            >
+              <code>generate:express</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:call"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:call" && "bg-slate-900"
+              )}
+            >
+              <code>generate:call</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:schedule"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:schedule" && "bg-slate-900"
+              )}
+            >
+              <code>generate:schedule</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:firestore"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:firestore" && "bg-slate-900"
+              )}
+            >
+              <code>generate:firestore</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:rtdb"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:rtdb" && "bg-slate-900"
+              )}
+            >
+              <code>generate:rtdb</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:remote"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:remote" && "bg-slate-900"
+              )}
+            >
+              <code>generate:remote</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:auth"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:auth" && "bg-slate-900"
+              )}
+            >
+              <code>generate:auth</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:analytics"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:analytics" && "bg-slate-900"
+              )}
+            >
+              <code>generate:analytics</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:storage"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:storage" && "bg-slate-900"
+              )}
+            >
+              <code>generate:storage</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:pubsub"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:pubsub" && "bg-slate-900"
+              )}
+            >
+              <code>generate:pubsub</code>
+            </a>
+
+            <a
+              href="/docs/cli/generate:testlab"
+              class={classnames(
+                "group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-slate-300 rounded-md hover:text-orange-100 hover:bg-orange-900",
+                path === "/docs/cli/generate:testlab" && "bg-slate-900"
+              )}
+            >
+              <code>generate:testlab</code>
             </a>
           </div>
         </div>

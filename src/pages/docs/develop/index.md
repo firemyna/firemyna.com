@@ -4,14 +4,16 @@ layout: "../../../layouts/Docs.astro"
 
 # Developing Firebase apps with Firemyna
 
-The main thing you have to learn to be productive with Firemyna is how the Functions are structured. Unlike the client-side, which is flexible and depends on the preset or configuration, Firemyna expects certain things from your Functions source code and its structure. It also [slightly differs from regular Firebase Functions projects](#firemyna-vs-regular-firebase-functions-project).
+## How it works
+
+The main thing you have to learn to be productive with Firemyna is how the Functions are structured. Unlike the client side of your project (if you have any), which is flexible and depends on the preset or configuration, Firemyna expects certain things from your Functions source code and its structure. It also [slightly differs from regular Firebase Functions projects](#firemyna-vs-regular-firebase-functions-project).
 
 Luckily, the expectations are pretty straightforward:
 
 1. Function files should be located in the functions source directory (`src/functions/functionName.ts`) or own module directory (`src/functions/functionName/index.ts`:).
 2. Each function should export a valid Firebase Function as the default export (`export default`).
 
-_The functions source location (`src/functions` in the examples) is defined by the preset or [`functionsPath`] configration option._
+_The functions source location (`src/functions` in the examples) is defined by the preset or [`functionsPath`] configuration option._
 
 ## Firemyna VS regular Firebase Functions project
 

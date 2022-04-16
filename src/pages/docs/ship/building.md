@@ -2,4 +2,4 @@
 layout: "../../../layouts/Docs.astro"
 ---
 
-# Deploying Firemyna project
+# Building Firemyna project
