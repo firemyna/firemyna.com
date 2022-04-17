@@ -4,7 +4,34 @@ layout: "../../../layouts/Docs.astro"
 
 # `firemyna generate:rtdb`
 
-TODO
+Generate a Realtime Database trigger function:
+
+```bash
+npx firemyna generate:rtdb functionName create "orders/{orderId}"
+# Or
+npx firemyna g:rtdb functionName create "orders/{orderId}"
+```
+
+An example of the generated function:
+
+```ts
+import * as functions from "firebase-functions";
+
+export default functions.database
+  .ref("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
+  });
+```
+
+[Read more about Realtime Database trigger functions in the Firebase Documentation →](https://firebase.google.com/docs/functions/database-events)
+
+The possible event (second argument) values:
+
+- `create`
+- `update`
+- `delete`
+- `write`
 
 The available arguments:
 
@@ -13,6 +40,27 @@ The available arguments:
 - [`--cwd`](#--cwd) - specify the working directory
 - [`--config`](#--config) - specify the config path to use
 - [`--help`](#--help) - show help for the command
+
+## `--instance`
+
+You can set the Relatime Datbase instance name to add trigger to with `--instance` argument:
+
+```bash
+npx firemyna generate:rtdb functionName --instance db-2
+```
+
+An example of the generated function:
+
+```ts
+import * as functions from "firebase-functions";
+
+export default functions.database
+  .instance("db-2")
+  .ref("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
+  });
+```
 
 ## `--memory`
 
@@ -29,9 +77,9 @@ import * as functions from "firebase-functions";
 
 export default functions
   .runWith({ memory: "1GB" })
-  // TODO
-  .https.onRequest((request, response) => {
-    response.send("Hi from functionName!");
+  .database.ref("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
   });
 ```
 
@@ -52,9 +100,9 @@ import * as functions from "firebase-functions";
 
 export default functions
   .region("europe-west3")
-  // TODO
-  .https.onRequest((request, response) => {
-    response.send("Hi from functionName!");
+  .database.ref("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
   });
 ```
 
