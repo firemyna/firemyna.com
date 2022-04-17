@@ -4,7 +4,34 @@ layout: "../../../layouts/Docs.astro"
 
 # `firemyna generate:firestore`
 
-TODO
+Generate a Firestore trigger function:
+
+```bash
+npx firemyna generate:firestore functionName create "orders/{orderId}"
+# Or
+npx firemyna g:firestore functionName create "orders/{orderId}"
+```
+
+An example of the generated function:
+
+```ts
+import * as functions from "firebase-functions";
+
+export default functions.firestore
+  .document("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
+  });
+```
+
+[Read more about Firestore trigger functions in the Firebase Documentation →](https://firebase.google.com/docs/functions/firestore-events)
+
+The possible event (second argument) values:
+
+- `create`
+- `update`
+- `delete`
+- `write`
 
 The available arguments:
 
@@ -19,7 +46,7 @@ The available arguments:
 You can set the Function memory with `--memory` argument:
 
 ```bash
-npx firemyna generate:firestore functionName --memory 1GB
+npx firemyna generate:firestore functionName create "orders/{orderId}" --memory 1GB
 ```
 
 An example of the generated function:
@@ -29,9 +56,9 @@ import * as functions from "firebase-functions";
 
 export default functions
   .runWith({ memory: "1GB" })
-  // TODO
-  .https.onRequest((request, response) => {
-    response.send("Hi from functionName!");
+  .firestore.document("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
   });
 ```
 
@@ -42,7 +69,7 @@ Run `npx firemyna generate:firestore --help` to learn about the available option
 You can set the Function region with `--region` argument:
 
 ```bash
-npx firemyna generate:firestore functionName --region europe-west3
+npx firemyna generate:firestore functionName create "orders/{orderId}" --region europe-west3
 ```
 
 An example of the generated function:
@@ -52,9 +79,9 @@ import * as functions from "firebase-functions";
 
 export default functions
   .region("europe-west3")
-  // TODO
-  .https.onRequest((request, response) => {
-    response.send("Hi from functionName!");
+  .firestore.document("orders/{orderId}")
+  .onCreate((snapshot, context) => {
+    console.log("Hi from functionName!");
   });
 ```
 
@@ -65,7 +92,7 @@ Run `npx firemyna generate:firestore --help` to learn about the available option
 Use `--cwd` to specify the working directory:
 
 ```bash
-npx firemyna generate:firestore functionName --cwd ./apps/website
+npx firemyna generate:firestore functionName create "orders/{orderId}" --cwd ./apps/website
 ```
 
 ## `--config`
@@ -73,7 +100,7 @@ npx firemyna generate:firestore functionName --cwd ./apps/website
 Use `--config` to specify the config path to use:
 
 ```bash
-npx firemyna generate:firestore functionName --config ./configs/firemyna.js
+npx firemyna generate:firestore functionName create "orders/{orderId}" --config ./configs/firemyna.js
 ```
 
 ## `--help`
