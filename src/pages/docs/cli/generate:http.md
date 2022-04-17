@@ -4,7 +4,7 @@ layout: "../../../layouts/Docs.astro"
 
 # `firemyna generate:http`
 
-Generate HTTP function:
+Generate an HTTP function:
 
 ```bash
 npx firemyna generate:http functionName
@@ -21,6 +21,8 @@ export default functions.https.onRequest((request, response) => {
   response.send("Hi from functionName!");
 });
 ```
+
+[Read more about HTTP functions in the Firebase Documentation →](https://firebase.google.com/docs/functions/http-events)
 
 The available arguments:
 
@@ -86,7 +88,7 @@ export default functions.https.onRequest((request, response) =>
 );
 ```
 
-Note that you'll need to install the `cors` package manually:
+Note that you'll need to install the `cookie-parser` package manually:
 
 ```bash
 npm install cookie-parser --save
