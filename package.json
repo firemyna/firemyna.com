@@ -7,10 +7,11 @@
     "build": "firemyna build"
   },
   "devDependencies": {
+    "@astrojs/svelte": "^0.1.1",
     "@astrojs/tailwind": "^0.0.2",
     "@tailwindcss/typography": "^0.5.2",
     "astro": "^0.25.4",
-    "firebase-tools": "^10.5.0",
+    "firebase-tools": "^10.7.1",
     "firemyna": "^0.10.0",
     "prettier-plugin-astro": "^0.0.12"
   },

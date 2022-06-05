@@ -1,5 +1,6 @@
 ---
 import Logotype from "../components/Logotype.astro";
+import PresetSnippet from "../components/PresetsSnippet.svelte"
 import BaseLayout from "../layouts/Base.astro";
 ---
 
@@ -18,13 +19,9 @@ import BaseLayout from "../layouts/Base.astro";
             <span class="block">Firebase apps</span>
           </h1>
 
-          <p
-            class="max-w-md mx-auto text-base text-slate-300 sm:text-lg md:text-xl md:max-w-3xl"
-          >
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua.
-          </p>
+          <code class="p-6 bg-slate-500 rounded font-mono text-left" style="width: 30rem">
+            <PresetSnippet client:load />
+          </code>
 
           <div class="max-w-md mx-auto flex justify-center space-x-5">
             <div class="rounded-md shadow">

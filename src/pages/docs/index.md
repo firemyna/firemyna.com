@@ -33,7 +33,7 @@ Here are the key points that will help you understand how Firemyna can help you,
 
 **Shared package.json**. Thanks to dependency optimization during the deployment (for more, [see below](#shipping), your web app and the Functions now share a single package.json that significantly simplifies the development.
 
-**Auto-index**. To create a new function, you need to create a file—no need to list it in the index file that is automatically generated.
+**Auto-index**. To create a new function, you just need to create a file—no need to list it in the index file that is automatically generated.
 
 **Processes manager**. The development server helps manage processes - starting the web app bundler, the Firebase Emulator with a single command. See all logs in a single place.
 
