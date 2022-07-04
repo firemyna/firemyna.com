@@ -33,7 +33,7 @@ You'll need to add `.firebaserc` with your Firebase project id:
 
 ### Adjust Astro configuration
 
-Now, we need to adjust the Astro configuration and set `./dist/production/hosting` as the `dist` property:
+Now, we need to adjust the Astro configuration and set `./dist/production/hosting` as the `outDir` property:
 
 ```diff
 --- a/astro.config.mjs
@@ -42,7 +42,7 @@ Now, we need to adjust the Astro configuration and set `./dist/production/hostin
 // https://astro.build/config
 -export default defineConfig({});
 +export default defineConfig({
-+  dist: './dist/production/hosting',
++  outDir: './dist/production/hosting',
 +});
 ```
 
@@ -61,12 +61,14 @@ Then, adjust the config to exclude the functions directory:
 ```diff
 --- a/snowpack.config.js
 +++ b/snowpack.config.js
-@@ -18,4 +18,5 @@ module.exports = {
-buildOptions: {
-/* ... */
-},
-+  exclude: ["**/node_modules/**/*", "**/src/functions/**/*"],
-};
+@@ -16,6 +16,6 @@ module.exports = {
+     /* ... */
+   },
+   buildOptions: {
+-    /* ... */
++    exclude: ["**/node_modules/**/*", "**/src/functions/**/*"],
+   },
+ };
 ```
 
 > _It tells Snowpack to ignore the functions directory, so it would not trip over server-side code._
