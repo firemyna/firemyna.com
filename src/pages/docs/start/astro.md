@@ -11,10 +11,7 @@ layout: "../../../layouts/Docs.astro"
 First, let's init Astro project following the [official instructions](https://docs.astro.build/getting-started/):
 
 ```bash
-mkdir PROJECT_NAME
-cd PROJECT_NAME
-npm init astro
-npm install
+npm init astro@latest
 ```
 
 ### Setup Firebase configuration
@@ -72,6 +69,22 @@ Then, adjust the config to exclude the functions directory:
 ```
 
 > _It tells Snowpack to ignore the functions directory, so it would not trip over server-side code._
+
+### Adjust `package.json`
+
+Make sure `"type": "module",` is not present in `package.json` so Node.js ESM won't activate:
+
+```diff
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,5 @@
+ {
+   "name": "@example/basics",
+-  "type": "module",
+   "version": "0.0.1",
+   "private": true,
+   "scripts": {
+```
 
 ### Install Firemyna & Firebase dependencies
 
